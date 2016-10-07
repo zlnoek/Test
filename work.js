@@ -1,15 +1,6 @@
-// PROMPT: Write a for loop than can loop thru any array
-/*
-var newArray = [1,2,3,4,5];
+// Read what filter, map, and reduce does on underscorejs.org
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-// for every element double it
-for (var i=0; i < newArray.length; i++){
-  // i=0, i = index of array
-  newArray[i] = newArray[i] * 2;
-}
-
-console.log(newArray);
-*/
 // Start On Underbar Functions
 // http://underscorejs.org/
 
@@ -25,3 +16,33 @@ function each(collection, callback){
     callback(collection[i], i, collection);
   }
 }
+
+
+
+
+
+// TEST function
+function test(argument, answer, description){
+  if (argument === undefined) {
+    console.log("ERROR: Argument Evaluated to UNDEFINED!");
+
+	// toString comparison is temporary solution
+  } else if (JSON.stringify(argument) === JSON.stringify(answer)) {
+		console.log("Test for " + description + ": PASSED");
+	} else {
+		console.log("Test for " + description + ": FAILED");
+		console.log("Recieved: " + argument);
+		console.log("Expected: " + answer);
+	}
+}
+
+// TEST CASES
+var testArrayEach = [1,2,3,4,5];
+
+each(testArrayEach, function(item){
+  item = item * 2;
+});
+
+test(testArrayEach,
+[2,4,6,8,10],
+"EACH_PART1_METHOD");
