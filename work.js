@@ -13,7 +13,7 @@
 // Collection will now be: [2,4,6,8,10]
 function each(collection, callback){
   for (var i = 0; i < collection.length; i++){
-    callback(collection[i], i, collection);
+    array[i] = callback(collection[i], i, collection);
   }
 }
 
@@ -37,12 +37,18 @@ function test(argument, answer, description){
 }
 
 // TEST CASES
-var testArrayEach = [1,2,3,4,5];
+var testArray = [1, 2, 3, 4, 5];
+var testObj = {a:1, b:2, c:3, d:4, e:5}
 
-each(testArrayEach, function(item){
-  item = item * 2;
+each(testObj, function(item, index, collection){
+  collection[index] = item * 2;
 });
 
-test(testArrayEach,
+test(testObj,
 [2,4,6,8,10],
 "EACH_PART1_METHOD");
+
+console.log(testObj.a);
+console.log(typeof(testArray));
+console.log(Array.isArray(testArray));
+console.log(Array.isArray(testObj));
