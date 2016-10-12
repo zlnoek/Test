@@ -46,3 +46,17 @@ each(testArrayEach, function(item){
 test(testArrayEach,
 [2,4,6,8,10],
 "EACH_PART1_METHOD");
+
+
+//Filter
+function filter(list, predicate){
+var x = [];
+  each(list, function(list){
+    if(predicate(list)){
+    x.push(list);
+    }
+  });
+  console.log(x);
+}
+
+filter(testArrayEach, function(num){return num%2 == 0;});
