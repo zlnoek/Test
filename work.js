@@ -60,3 +60,14 @@ var x = [];
 }
 
 filter(testArrayEach, function(num){return num%2 == 0;});
+
+//Map
+function map(list, iteratee){
+  var y = [];
+    each(list, function(list){
+      y.push(iteratee(list));
+    });
+    console.log(y);
+}
+
+map(testArrayEach, function(num){return num*3;});
